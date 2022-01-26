@@ -1,7 +1,7 @@
 # Solana Ping API 
 
 ## Purpose
-- execute solana ping command
+- perform a solana ping functionality
 - provide http API service
 - generate a report and send to slack
 - store result of solana ping
@@ -17,12 +17,13 @@
 - mkdir ~/.config/ping-api
 - put config.yaml in ~/.config/ping-api/config.yaml
 
-## sugguest setup 
+## Setup suggestion
+
 - mkdir ~/ping-api-server
-- cp scripts in script to ~/ping-api-server
+- cp ./script/* in script to ~/ping-api-server
 - make solana-ping-api system service 
     - create a /etc/systemd/system/solana-ping-api.service
-    - remember to di ```sudo systemctl daemon-reload```
+    - remember to do ```sudo systemctl daemon-reload```
 
 ```
 [Unit]
@@ -44,7 +45,8 @@ WantedBy=multi-user.target
 ```
 
 - put executable file in ~/ping-api-server
-- cp config.yaml.samle to ~/ping-api-server/config.yaml and modify it 
+- cp config.yaml.sample to ~/ping-api-server/config.yaml and modify it 
+- mkdir ~/.config/ping-api
 - use cp-to-real-config.sh to copy config.yaml to ~/.config/ping-api/config.yaml
-- start service by sudo sysmtemctl start solana-ping-api.service
-- you can check log by ```sudo tail -f /var/log/syslog | grep ping-api```
+- start service by ```sudo sysmtemctl start solana-ping-api.service```
+- check log by ```sudo tail -f /var/log/syslog | grep ping-api```
